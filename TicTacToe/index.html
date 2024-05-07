@@ -13,24 +13,29 @@
         <!-- Definire il numero di colonne con col-numero | invece per spostarlo di ot colonne uso offset-numero-->
         <div class="col-6 offset-3">
             <div class="row">
-                <div id="div1" class="alert alert-primary col-4" onclick="ciao(1)">&nbsp; <!-- Indica uno spazio inesistente --></div>
-                <div id="div2" class="alert alert-primary col-4">&nbsp;</div>
-                <div id="div3" class="alert alert-primary col-4">&nbsp;</div>
+                <div id="div1" class="alert alert-primary col-4 cella" onclick="posiziono(1)">&nbsp; <!-- Indica uno spazio inesistente --></div>
+                <div id="div2" class="alert alert-primary col-4 cella" onclick="posiziono(2)">&nbsp;</div>
+                <div id="div3" class="alert alert-primary col-4 cella" onclick="posiziono(3)">&nbsp;</div>
             </div>
             <div class="row">
-                <div id="div4" class="alert alert-primary col-4">&nbsp;</div>
-                <div id="div5" class="alert alert-primary col-4">&nbsp;</div>
-                <div id="div6" class="alert alert-primary col-4">&nbsp;</div>
+                <div id="div4" class="alert alert-primary col-4 cella" onclick="posiziono(4)">&nbsp;</div>
+                <div id="div5" class="alert alert-primary col-4 cella" onclick="posiziono(5)">&nbsp;</div>
+                <div id="div6" class="alert alert-primary col-4 cella" onclick="posiziono(6)">&nbsp;</div>
             </div>
             <div class="row"> <!-- Definisco una riga -->
-                <div id="div7" class="alert alert-primary col-4">&nbsp;</div>
-                <div id="div8" class="alert alert-primary col-4">&nbsp;</div>
-                <div id="div9" class="alert alert-primary col-4">&nbsp;</div>
+                <div id="div7" class="alert alert-primary col-4 cella" onclick="posiziono(7)">&nbsp;</div>
+                <div id="div8" class="alert alert-primary col-4 cella" onclick="posiziono(8)">&nbsp;</div>
+                <div id="div9" class="alert alert-primary col-4 cella" onclick="posiziono(9)">&nbsp;</div>
+            </div>
+            <div class="row">
+                <button value="Ricominciare" onclick="reset()">Reset</button>
+                <div>Turno di:</div>
+                <div id="segnaGiocatore" class="alert alert-warning col-12">X</div>
             </div>
         </div>
     </div>
     <!-- Bootstrap definisce che ogni contenitore ha 12 colonne, visti i multipli divisori -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="./script.js">
+    <script src="./scipt.js" ></script>
 </body>
 </html>
