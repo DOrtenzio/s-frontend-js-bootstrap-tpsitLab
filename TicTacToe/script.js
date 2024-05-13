@@ -60,6 +60,7 @@ let segnaGiocatoreCorrente = "X";
             let celle = document.getElementsByClassName("cella");
             let segna=document.getElementById("segnaGiocatore");
             segna.innerHTML="X";
+            segnaGiocatoreCorrente = "X";
             for (let i = 0; i < celle.length; i++) {
                  celle[i].innerHTML = "&nbsp;";
             }
