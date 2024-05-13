@@ -65,3 +65,19 @@ let segnaGiocatoreCorrente = "X";
                  celle[i].innerHTML = "&nbsp;";
             }
         }
+
+//Seconda parte
+function cambioColore() {
+    const testo = document.getElementById("text");
+    let r = Math.floor(Math.random() * 256); // Genera un numero casuale tra 0 e 255 intero
+    let s = Math.floor(Math.random() * 256);
+    let t = Math.floor(Math.random() * 256);
+    testo.style.color = `rgb(${r},${s},${t})`; // Utilizza la sintassi corretta per il colore RGB
+}
+function cambioColoreBackground() {
+    const testo = document.getElementById("text");
+    let r = Math.floor(Math.random() * 256); // Genera un numero casuale tra 0 e 255 intero
+    let s = Math.floor(Math.random() * 256);
+    let t = Math.floor(Math.random() * 256);
+    testo.style.backgroundColor = `rgb(${r},${s},${t})`; // Utilizza la sintassi corretta per il colore RGB
+}

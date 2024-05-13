@@ -35,8 +35,12 @@
             </div>
         </div>
         <!--Aggiungi una scritta che al click cambi colore anche quando ci passo sopra cambia lo sfondo-->
-        <div class="col-6 offset-3">
-            <p id="CiaoMondo" onclick="cambioColoreTesto()">Ciao Mondo</p>
+
+        <div class="col-6 offset-3 container-fluid">
+          <div id="text" class="alert alert-primary col-12 " onclick="cambioColore()" onmouseover="cambioColoreBackground()">Parte 2</div>
+            <div>&nbsp;</div>
+            <div id="text" class="alert alert-primary col-4 cella" onclick="cambioColore()" onmouseover="cambioColoreBackground()">Ciao Mondo</div>
+            <div>&nbsp;</div>
             <div id="carouselExample" class="carousel slide">
                 <div class="carousel-inner">
                   <div class="carousel-item active">
@@ -59,14 +63,6 @@
                 </button>
               </div>
         </div>
-        <script>
-            function cambioColoreTesto(){
-                const testo=document.getElementById("CiaoMondo");
-                CiaoMondo.style.color="HFF000"; //Metti sigla giusra colore
-                //Per casuale usa math random e sostituisci ultime tre cifre
-            }
-            
-        </script>
     </div>
     <!-- Bootstrap definisce che ogni contenitore ha 12 colonne, visti i multipli divisori -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
