@@ -10,9 +10,19 @@ let segnaGiocatoreCorrente = "X";
                 segnaGiocatoreCorrente = cambioGiocatore(segnaGiocatoreCorrente);
                 document.getElementById("segnaGiocatore").innerHTML = segnaGiocatoreCorrente;
             }
-        }
-    
+        }  
         function controlloVittoriaoPareggio() {
+            let risultatoVittoria = controllaVittoria();
+            if(risultatoVittoria !== "P"){
+                alert("Il giocatore " + risultatoVittoria + " ha vinto.");
+                reset();
+            }
+            else if(controlloPareggio() === false){
+                alert("Pareggio");
+                reset();
+            }
+        }        
+        function controllaVittoria(){
             // Array di array combinazioni vincenti
             const combinazioniVincita = [
                 [1, 2, 3], [4, 5, 6], [7, 8, 9], // orizzontali
@@ -21,31 +31,28 @@ let segnaGiocatoreCorrente = "X";
             ];
     
             for (let combinazione of combinazioniVincita) {
+                let vinc="P";
                 let cella1 = document.getElementById("div" + combinazione[0]).innerHTML;
                 let cella2 = document.getElementById("div" + combinazione[1]).innerHTML;
                 let cella3 = document.getElementById("div" + combinazione[2]).innerHTML;
-             // Verifica se una delle combinazioni vincenti è stata completata da un giocatore
+                // Verifica se una delle combinazioni vincenti è stata completata da un giocatore
                 if (cella1 === cella2 && cella2 === cella3 && cella3 !== "&nbsp;") {
-                    alert("Il giocatore " + cella3 + " ha vinto.");
-                    reset();
-                    return;
+                    vinc=cella3
+                    return vinc;
                 }
             }
-            controlloPareggio();
+            return vinc;
         }
         function controlloPareggio(){
             let celle = document.getElementsByClassName("cella");
-            let isPareggio=true;
+            let isVuoto=false;
             for (let i = 0; i < celle.length; i++) {
                  if(celle[i].innerHTML === "&nbsp;"){
-                    isPareggio=false;
+                    isVuoto=true;
                     break;
-                }
+                 }
             }
-            if(isPareggio){
-                alert("Pareggio");
-                reset();
-            }
+            return isVuoto;
         }
 
         function cambioGiocatore(giocatoreCorrente) {
