@@ -1,3 +1,3 @@
 # TicTacToeJs
 Creazione del tris in javascript
-https://dortenzio.github.io/frontend-js-tictactoe/TicTacToe/index.html
+> https://dortenzio.github.io/s-frontend-js-bootstrap-tpsitLab/TicTacToe/index.html
