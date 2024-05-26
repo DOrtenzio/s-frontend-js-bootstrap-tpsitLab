@@ -6,9 +6,9 @@ let segnaGiocatoreCorrente = "X";
                 alert("Questa casella è già stata selezionata.");
             } else {
                 cella.innerHTML = segnaGiocatoreCorrente; //Do in input
-                controlloVittoriaoPareggio(n);
                 segnaGiocatoreCorrente = cambioGiocatore(segnaGiocatoreCorrente);
                 document.getElementById("segnaGiocatore").innerHTML = segnaGiocatoreCorrente;
+                controlloVittoriaoPareggio();
             }
         }  
         function controlloVittoriaoPareggio() {
@@ -17,7 +17,7 @@ let segnaGiocatoreCorrente = "X";
                 alert("Il giocatore " + risultatoVittoria + " ha vinto.");
                 reset();
             }
-            else if(controlloPareggio() === false){
+            else if(!controlloPareggio()){
                 alert("Pareggio");
                 reset();
             }
@@ -31,28 +31,24 @@ let segnaGiocatoreCorrente = "X";
             ];
     
             for (let combinazione of combinazioniVincita) {
-                let vinc="P";
                 let cella1 = document.getElementById("div" + combinazione[0]).innerHTML;
                 let cella2 = document.getElementById("div" + combinazione[1]).innerHTML;
                 let cella3 = document.getElementById("div" + combinazione[2]).innerHTML;
                 // Verifica se una delle combinazioni vincenti è stata completata da un giocatore
                 if (cella1 === cella2 && cella2 === cella3 && cella3 !== "&nbsp;") {
-                    vinc=cella3
-                    return vinc;
+                    return cella1;
                 }
             }
-            return vinc;
+            return "P";
         }
         function controlloPareggio(){
             let celle = document.getElementsByClassName("cella");
-            let isVuoto=false;
             for (let i = 0; i < celle.length; i++) {
                  if(celle[i].innerHTML === "&nbsp;"){
-                    isVuoto=true;
-                    break;
+                    return true;
                  }
             }
-            return isVuoto;
+            return false;
         }
 
         function cambioGiocatore(giocatoreCorrente) {
@@ -65,9 +61,8 @@ let segnaGiocatoreCorrente = "X";
         }
         function reset() {
             let celle = document.getElementsByClassName("cella");
-            let segna=document.getElementById("segnaGiocatore");
-            segna.innerHTML="X";
             segnaGiocatoreCorrente = "X";
+            document.getElementById("segnaGiocatore").innerHTML=segnaGiocatoreCorrente;
             for (let i = 0; i < celle.length; i++) {
                  celle[i].innerHTML = "&nbsp;";
             }
